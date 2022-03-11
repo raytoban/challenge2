@@ -42,7 +42,7 @@ class Chooser {
     return _storys[_storyNumber].choice2;
   }
 
-  void nextStory(int choix) {
+  void nextStory() {
     if (_storyNumber == 0) {
       _storyNumber = 2;
     } else if (_storyNumber == 1) {
@@ -54,7 +54,7 @@ class Chooser {
     }
   }
 
-  void newStory(int choix) {
+  void newStory() {
     if (_storyNumber == 0) {
       _storyNumber++;
     } else if (_storyNumber == 1) {
@@ -63,6 +63,14 @@ class Chooser {
       _storyNumber = 4;
     } else if (_storyNumber == 3) {
       _storyNumber = 0;
+    }
+  }
+
+  bool hideBtn() {
+    if (_storyNumber > 2) {
+      return false;
+    } else {
+      return true;
     }
   }
 
